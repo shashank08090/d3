@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+
+import React from 'react';
+import BarChart from './BarChart';
+import './App.css'; // You can add custom styles if needed
+
+const jsonData = [
+  { "category": "A", "value": 20 },
+  { "category": "B", "value": 50 },
+  { "category": "C", "value": 30 },
+  { "category": "D", "value": 40 },
+  { "category": "E", "value": 25 }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bar Graph with D3.js in React</h1>
+      <div className="chart-container">
+        <BarChart data={jsonData} />
+      </div>
     </div>
   );
 }
