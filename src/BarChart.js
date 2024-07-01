@@ -25,7 +25,7 @@ const BarChart = ({ data }) => {
     [data]
   );
 
-  // Use useCallback for the useEffect callback to prevent recreation on every render
+ 
   const drawChart = useCallback(() => {
     const svg = d3.select(svgRef.current);
 
@@ -51,7 +51,7 @@ const BarChart = ({ data }) => {
     svg.append("g")
       .attr("transform", `translate(${margin.left}, 0)`)
       .call(d3.axisLeft(yScale));
-  }, [data, xScale, yScale]); // Include xScale and yScale in dependencies since they are memoized
+  }, [data, xScale, yScale]); 
 
   useEffect(() => {
     if (data) {
