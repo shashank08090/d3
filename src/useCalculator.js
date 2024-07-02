@@ -20,12 +20,12 @@ const useCalculator = () => {
       }
     }, [input]);
   
-    // Memoize the result for display
+   
     const displayResult = useMemo(() => {
       return result !== '' ? result.toString() : '';
     }, [result]);
   
-    // Return state and handler functions
+
     return {
       input,
       displayResult,

@@ -3,13 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Calc from './Calc'
+import Calc from './Calc';
+import Counter from './Counter';
+import ErrorBoundary from './ErrorBoundary';
+import { CounterProvider } from './CounterContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Calc />
+    {/* <Calc /> */}
+    <ErrorBoundary >
+      <CounterProvider>
+      <Counter />
+      </CounterProvider>
+    </ErrorBoundary>
+  
   </React.StrictMode>
 );
 
