@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+// ErrorBoundary.js
 
+import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -7,68 +8,25 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false };
   }
 
-
   static getDerivedStateFromError(error) {
-  
+    // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
-
   componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
     console.error('Error caught by error boundary:', error, errorInfo);
-   
   }
 
   render() {
     if (this.state.hasError) {
-    
-      return (
-        <div>
-          <h1>Something went wrong.</h1>
-          <p>Please try again later.</p>
-        </div>
-      );
+      // Fallback UI if there's an error
+      return <h1>Something went wrong.</h1>;
     }
- 
+
+    // Render children normally
     return this.props.children;
   }
 }
 
-
-class ExampleComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-  }
-
-
-  handleClick = () => {
-    this.setState({ counter: this.state.counter + 1 });
-    if (this.state.counter === 5) {
-      throw new Error('Error: Counter reached 5');
-    }
-  };
-
-  render() {
-    return (
-      <div>
-        <h2>Counter: {this.state.counter}</h2>
-        <button onClick={this.handleClick}>Increment</button>
-      </div>
-    );
-  }
-}
-
-
-function App() {
-  return (
-    <div>
-      <h1>Error Boundary Example</h1>
-      <ErrorBoundary>
-        <ExampleComponent />
-      </ErrorBoundary>
-    </div>
-  );
-}
-
-export default App;
+export default ErrorBoundary;

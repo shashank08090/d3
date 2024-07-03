@@ -6,18 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import Calc from './Calc';
 import Counter from './Counter';
 import ErrorBoundary from './ErrorBoundary';
+import ErrorBoundary2 from './ErrorBoundary2';
 import { CounterProvider } from './CounterContext';
+import Counter2 from './Counter2'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Calc /> */}
-    <ErrorBoundary >
+    <ErrorBoundary2 >
       <CounterProvider>
-      <Counter />
+      <Counter2 />
       </CounterProvider>
-    </ErrorBoundary>
+    </ErrorBoundary2>
   
   </React.StrictMode>
 );
