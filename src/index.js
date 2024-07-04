@@ -9,17 +9,19 @@ import ErrorBoundary from './ErrorBoundary';
 import ErrorBoundary2 from './ErrorBoundary2';
 import { CounterProvider } from './CounterContext';
 import Counter2 from './Counter2'
+import Keyframe from './keyframe'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Calc /> */}
-    <ErrorBoundary2 >
+    {/* <ErrorBoundary2 >
       <CounterProvider>
       <Counter2 />
       </CounterProvider>
-    </ErrorBoundary2>
+    </ErrorBoundary2> */}
+    <Keyframe />
   
   </React.StrictMode>
 );
